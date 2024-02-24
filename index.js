@@ -25,6 +25,17 @@ app.post('/temps', async function (req, res) {
         res.status(500).json({status:'error',message:'Data save faild.', data:error})
     }
 });
+app.get('/temps', async function (req, res) {
+    try{
+        const {body} = req;
+        console.log(body)
+        var result = await temps.findAll()
+        res.status(200).json({status:'success',message:'Data saved.', data:result})
+    }catch(error){
+        console.error(error);
+        res.status(500).json({status:'error',message:'Data save faild.', data:error})
+    }
+});
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!');
 });
