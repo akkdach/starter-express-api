@@ -71,7 +71,7 @@ async function createtemp() {
         var result = await temps.create({
             sn: "SNDEMO01",
             temp_value: (Math.random()).toString(),
-            temp_datetime: currentDate
+            temp_datetime: moment().add(7,'hour')
         })
         console.log(result);
     } catch (error) {
