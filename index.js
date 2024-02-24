@@ -5,10 +5,12 @@ const http = require('http');
 const moment = require('moment-timezone');
 const utcOffset = 7 * 60; // UTC+7 in minutes
 const currentDate = moment().add(7,'h');
+const cors = require('cors');
 
 var app = express();
 app.use(bodyParser.json());
-
+// Allow all CORS requests
+app.use(cors());
 app.get('/', function (req, res) {
     res.send('Welcome to temperature capture!');
 });
