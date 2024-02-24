@@ -6,7 +6,7 @@ const { Sequelize,Op, DataTypes } = require('sequelize');
 const http = require('http');
 const moment = require('moment-timezone');
 const utcOffset = 7 * 60; // UTC+7 in minutes
-const currentDate = moment().add(7,'h');
+const currentDate = moment().add(7,'hour')
 
 var app = express();
 app.use(bodyParser.json());
