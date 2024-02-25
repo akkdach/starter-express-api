@@ -1,5 +1,6 @@
 var express = require('express');
 var cors = require('cors')
+var cron = require('node-cron');
 
 var bodyParser = require('body-parser');
 const { Sequelize,Op, DataTypes } = require('sequelize');
@@ -65,6 +66,8 @@ app.listen(3000, function () {
     console.log('Example app listening on port 3000!');
 });
 
+
+
 async function createtemp() {
     try {
 
@@ -79,9 +82,11 @@ async function createtemp() {
     }
 }
 
-setInterval(() => {
+
+
+cron.schedule('* * * * *', () => {
     createtemp();
-}, 1000 * 60);
+  });
 //password vpanel = fFFblLbMZq
 // A30xd0slfksdwl!
 //Website for dui.000.pe
