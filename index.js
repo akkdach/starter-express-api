@@ -85,7 +85,7 @@ async function createtemp() {
 
 
 cron.schedule('* * * * *', () => {
-    createtemp();
+    // createtemp();
   });
 //password vpanel = fFFblLbMZq
 // A30xd0slfksdwl!
