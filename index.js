@@ -23,7 +23,7 @@ app.post('/temps', async function (req, res) {
         var result = await temps.create({
             sn: body.sn,
             temp_value: body.temp_value,
-            temp_datetime: currentDate
+            temp_datetime: moment().add(7,'hour')
         })
         res.status(200).json({ status: 'success', message: 'Data saved.', data: result })
     } catch (error) {
@@ -72,7 +72,7 @@ async function createtemp() {
     try {
 
         var result = await temps.create({
-            sn: "SNDEMO01",
+            sn: "SNDEMO02",
             temp_value: (Math.random()).toString(),
             temp_datetime: moment().add(7,'hour')
         })
